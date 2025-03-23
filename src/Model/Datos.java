@@ -45,17 +45,21 @@ public class Datos {
                 while((fila=lector.readLine())!=null){
                     String [] ListaTemporal = fila.split(",");
 
-                    if (ListaTemporal.length<2) {
-                        continue;
+                    if (ListaTemporal.length==2) {
+                        Datos dato = new Datos();
+
+                        dato.setCategoria(ListaTemporal[0]);
+                        dato.setDato(Integer.parseInt(ListaTemporal[1]));
+                        
+                        libreria[contador]=null;
+                        libreria[contador]=dato;
+                        contador++;
                     }
-
-                    Datos dato = new Datos();
-
-                    dato.setCategoria(ListaTemporal[0]);
-                    dato.setDato(Integer.parseInt(ListaTemporal[1]));
-
-                    libreria[contador]=dato;
-                    contador++;
+                    else{
+                        JOptionPane.showMessageDialog(view,"Error al leer el archivo","ERROR", JOptionPane.ERROR_MESSAGE);
+                        view.txtRuta.setText("");
+                        break;
+                    }
                 }
             }
             catch(IOException f){

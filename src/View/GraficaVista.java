@@ -35,6 +35,8 @@ public class GraficaVista extends javax.swing.JFrame {
         btnGenerar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         grafica = new javax.swing.JPanel();
+        jSeparator3 = new javax.swing.JSeparator();
+        btnOrdenar = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -109,14 +111,13 @@ public class GraficaVista extends javax.swing.JFrame {
         btnGenerar.setForeground(new java.awt.Color(255, 255, 255));
         btnGenerar.setText("Generar");
         btnGenerar.setActionCommand("Generar");
-        btnGenerar.setBorder(null);
         btnGenerar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGenerar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenerarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGenerar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 70, 30));
+        jPanel1.add(btnGenerar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 100, 40));
 
         btnBuscar.setBackground(new java.awt.Color(0, 102, 255));
         btnBuscar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
@@ -124,35 +125,47 @@ public class GraficaVista extends javax.swing.JFrame {
         btnBuscar.setText("Buscar");
         btnBuscar.setActionCommand("Buscar");
         btnBuscar.setToolTipText("");
-        btnBuscar.setBorder(null);
         btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 70, 30));
+        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 110, 40));
+
+        grafica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout graficaLayout = new javax.swing.GroupLayout(grafica);
         grafica.setLayout(graficaLayout);
         graficaLayout.setHorizontalGroup(
             graficaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
         graficaLayout.setVerticalGroup(
             graficaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 250, Short.MAX_VALUE)
+            .addGap(0, 310, Short.MAX_VALUE)
         );
 
-        jPanel1.add(grafica, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 430, 250));
+        jPanel1.add(grafica, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 510, 310));
+
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 10, 50));
+
+        btnOrdenar.setBackground(new java.awt.Color(0, 102, 255));
+        btnOrdenar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        btnOrdenar.setForeground(new java.awt.Color(255, 255, 255));
+        btnOrdenar.setText("Ordenar");
+        btnOrdenar.setActionCommand("Ordenar");
+        btnOrdenar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 100, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -238,6 +251,7 @@ public class GraficaVista extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnGenerar;
+    public javax.swing.JButton btnOrdenar;
     public javax.swing.JPanel grafica;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -245,6 +259,7 @@ public class GraficaVista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtRuta;
     // End of variables declaration//GEN-END:variables

@@ -4,13 +4,16 @@ package Control;
 import Model.Datos;
 import static Model.Datos.encabezado;
 import static Model.Datos.libreria;
+import Model.Hilos;
 import View.GraficaVista;
+import View.OpcionVista;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -29,6 +32,7 @@ public class ControladorGrafica implements ActionListener{
         this.view = view;
         this.view.btnBuscar.addActionListener(this);
         this.view.btnGenerar.addActionListener(this);
+        this.view.btnOrdenar.addActionListener(this);
     }
     
     //metodo para inicializar la vista
@@ -60,12 +64,12 @@ public class ControladorGrafica implements ActionListener{
         for (int i = 0; i < model.ContadorDatos(); i++) {
             datos.setValue(
                     libreria[i].getDato(), //obteniendo los datos numericos
-                    "hola1", // titulo de la tabla
+                    libreria[i].getCategoria(), // titulo de la tabla
                     libreria[i].getCategoria() //obteniendo nombre de la columna
             );
         }
         //incertardo datos a la grafica
-        JFreeChart grafico_barras = ChartFactory.createBarChart(
+        JFreeChart grafico_barras = ChartFactory.createBarChart3D(
                 titulo,                         //titulo de la grafica
                 encabezado[0],                  //titulo de las barras
                 encabezado[1],                  //titulo de la numeracion
@@ -79,7 +83,7 @@ public class ControladorGrafica implements ActionListener{
         //generando un jpanel a la grafica
         ChartPanel panel = new ChartPanel(grafico_barras);
         panel.setMouseWheelEnabled(true);
-        panel.setPreferredSize(new Dimension(430,250));
+        panel.setPreferredSize(new Dimension(510,310));
         
         view.grafica.setLayout(new BorderLayout());
         view.grafica.add(panel,BorderLayout.NORTH);
@@ -94,23 +98,47 @@ public class ControladorGrafica implements ActionListener{
         
         //diferenciando que boton fue precionado
         String opcion = e.getActionCommand();
+        String ruta=view.txtRuta.getText();
+        
         switch (opcion){
             //accion del boton buscar
             case ("Buscar"):
                 //obteniendo la ruta del archivo
-                String ruta=Buscador();
+                ruta=Buscador();
                 view.txtRuta.setText(ruta);
-                ruta=view.txtRuta.getText();
-                //guardando los datos del archivo
-                model.GuardarDatos(ruta,view);
-                
                 break;
-            case ("Generar"):
-                String titulo= view.txtNombre.getText();
-                GenerarGrafica(libreria,titulo);
                 
+            //accion del boton generar
+            case ("Generar"):
+                
+                if (!view.txtNombre.getText().equals("") && !view.txtNombre.getText().equals("Ingrese algun nombre")) {
+                   //guardando los datos del archivo
+                    model.GuardarDatos(ruta,view);
+                
+                    if (model.ContadorDatos()!=0) {
+                        //obteniendo el nombre de la grafica
+                        String titulo= view.txtNombre.getText();
+                        GenerarGrafica(libreria,titulo);
+                    } 
+                }else{
+                    JOptionPane.showMessageDialog(view,"Ingrese un nombre para la tabla","ERROR",JOptionPane.ERROR_MESSAGE);
+                }
+                break;
+            //accion del boton ordenar
+            case ("Ordenar"):
+                if (model.ContadorDatos()!=0) {
+                    OpcionVista view = new OpcionVista();
+                    Hilos model = new Hilos();
+                    
+                    ControladorOrdenar control = new ControladorOrdenar(model,view);
+                    control.IniciarOrdenamientoVista();
+                    
+                }else{
+                    JOptionPane.showMessageDialog(view,"No existe ninguna grafica para ordenar","ERROR",JOptionPane.ERROR_MESSAGE);
+                }
                 break;
         }
+        
         
     }
 }
