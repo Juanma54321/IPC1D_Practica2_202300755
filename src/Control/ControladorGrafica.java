@@ -4,7 +4,6 @@ package Control;
 import Model.Datos;
 import static Model.Datos.encabezado;
 import static Model.Datos.libreria;
-import Model.Hilos;
 import View.GraficaVista;
 import View.OpcionVista;
 import java.awt.BorderLayout;
@@ -85,9 +84,10 @@ public class ControladorGrafica implements ActionListener{
         panel.setMouseWheelEnabled(true);
         panel.setPreferredSize(new Dimension(510,310));
         
+        view.grafica.removeAll();
         view.grafica.setLayout(new BorderLayout());
         view.grafica.add(panel,BorderLayout.NORTH);
-        
+        view.grafica.revalidate();
         view.pack();
         view.repaint();
         
@@ -127,10 +127,10 @@ public class ControladorGrafica implements ActionListener{
             //accion del boton ordenar
             case ("Ordenar"):
                 if (model.ContadorDatos()!=0) {
-                    OpcionVista view = new OpcionVista();
-                    Hilos model = new Hilos();
+                    OpcionVista view2 = new OpcionVista();
                     
-                    ControladorOrdenar control = new ControladorOrdenar(model,view);
+                    ControladorOrdenar control = new ControladorOrdenar(view2,view);
+                    control.MetodosdeOrdenamiento();
                     control.IniciarOrdenamientoVista();
                     
                 }else{

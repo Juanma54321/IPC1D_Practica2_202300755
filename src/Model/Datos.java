@@ -15,6 +15,7 @@ public class Datos {
     
     //libreria donde estaran todos los datos leidos
     public static Datos[] libreria = new Datos[20];
+    public static Datos[] libreria_ordenada;
 
     //set y get de Datos
     public int getDato() {
@@ -35,7 +36,6 @@ public class Datos {
     
     //metodo para guardar los datos en una libreria
     public void GuardarDatos(String ruta,GraficaVista view){
-        File archivoLeido = new File(ruta);
         
         try(BufferedReader lector = new BufferedReader(new FileReader(ruta))){
             try{
@@ -73,15 +73,15 @@ public class Datos {
     }
     
     //metodo para contar cuantos datos existentes hay
-    public byte ContadorDatos(){
+    public static byte ContadorDatos(){
         byte contador=0;
         
         for (int i = 0; i < libreria.length; i++) {
+            //verificando que celdas contienen datos
             if (libreria[i]!=null) {
                 contador++;
             }
         }
-        
         return contador;
     }
 }
