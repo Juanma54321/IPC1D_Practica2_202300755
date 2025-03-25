@@ -6,7 +6,8 @@ import static Model.Datos.ContadorDatos;
 import static Model.Datos.libreria;
 import static Model.Datos.libreria_ordenada;
 import Model.HiloDatosControl;
-import Model.Hilos;
+import Model.OrdenamientoAscendente;
+import Model.OrdenamientoDescendente;
 import View.GraficaOrdenadaVista;
 import View.GraficaVista;
 import View.OpcionVista;
@@ -63,10 +64,12 @@ public class ControladorOrdenar implements ActionListener{
         //capturando las condiciones para ordenar
         String TipoOrdenamiento;
         Long velocidad=Velocidad();
+        
         TipoOrdenamiento= (String) view.btnOrdenamiento.getSelectedItem();
         
-        //generando el hilo que graficara los datos
-        Thread hilo1 = new Thread(new Hilos(TipoOrdenamiento,velocidad,view,view2));    
+        //generando el hilo ordenaran de forma ascendente o descendente
+        Thread hilo1 = new Thread(new OrdenamientoAscendente(TipoOrdenamiento,velocidad,view,view2));    
+        Thread hilo2 = new Thread(new OrdenamientoDescendente(TipoOrdenamiento,velocidad,view,view2));
     
         switch (opcion){
             //accion del boton cancelar
@@ -85,7 +88,19 @@ public class ControladorOrdenar implements ActionListener{
                     for (int i = 0; i < ContadorDatos() ; i++) {
                         libreria_ordenada[i]=libreria[i];
                     }
+                    
+                    //iniciando el hilo de ordenamiento
                     hilo1.start();
+                    
+                    
+                }else if(view.btnDescendente.isSelected()){
+                    //copiando el array
+                    libreria_ordenada=new Datos[ContadorDatos()];
+                    for (int i = 0; i < ContadorDatos() ; i++) {
+                        libreria_ordenada[i]=libreria[i];
+                    }
+                    //iniciando el hilo de ordenamiento
+                    hilo2.start();
                 }
                 
                 break;
