@@ -6,6 +6,7 @@ import static Model.Datos.ContadorDatos;
 import static Model.Datos.libreria;
 import static Model.Datos.libreria_ordenada;
 import Model.HiloDatosControl;
+import Model.Impresor;
 import Model.OrdenamientoAscendente;
 import Model.OrdenamientoDescendente;
 import View.GraficaOrdenadaVista;
@@ -71,6 +72,7 @@ public class ControladorOrdenar implements ActionListener{
         //generando el hilo ordenaran de forma ascendente o descendente
         Thread hilo1 = new Thread(new OrdenamientoAscendente(TipoOrdenamiento,velocidad,view,view2));    
         Thread hilo2 = new Thread(new OrdenamientoDescendente(TipoOrdenamiento,velocidad,view,view2));
+        
     
         switch (opcion){
             //accion del boton cancelar
