@@ -11,6 +11,7 @@ import Model.OrdenamientoDescendente;
 import View.GraficaOrdenadaVista;
 import View.GraficaVista;
 import View.OpcionVista;
+import View.ReporteVista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -83,6 +84,7 @@ public class ControladorOrdenar implements ActionListener{
                 
                 //ordenando acendente
                 if (view.BtnAscendente.isSelected()) {
+                    
                     //copiando el array
                     libreria_ordenada=new Datos[ContadorDatos()];
                     for (int i = 0; i < ContadorDatos() ; i++) {
@@ -91,7 +93,6 @@ public class ControladorOrdenar implements ActionListener{
                     
                     //iniciando el hilo de ordenamiento
                     hilo1.start();
-                    
                     
                 }else if(view.btnDescendente.isSelected()){
                     //copiando el array

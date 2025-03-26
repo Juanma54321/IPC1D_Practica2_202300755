@@ -24,18 +24,48 @@ public class ReporteVista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSeparator2 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         txtAlgoritmo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtOrden = new javax.swing.JLabel();
+        txtPasos = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtVelocidad = new javax.swing.JLabel();
+        GraficaDesordenada = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        txt = new javax.swing.JLabel();
+        txtMinutos2 = new javax.swing.JLabel();
+        txt1 = new javax.swing.JLabel();
+        txtMilisegundos1 = new javax.swing.JLabel();
+        txtSegundos1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtOrden1 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+        txtDatoMenor = new javax.swing.JLabel();
+        txtDatoMayor = new javax.swing.JLabel();
+        txtCategoriaMenor = new javax.swing.JLabel();
+        txtCategoriaMayor = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        tablaDatosDesordenados = new javax.swing.JScrollPane();
+        tablaDesordenada = new javax.swing.JTable();
+        jSeparator7 = new javax.swing.JSeparator();
+        jLabel10 = new javax.swing.JLabel();
+        tablaDatosOrdenados = new javax.swing.JScrollPane();
+        TablaDatosOrdenados = new javax.swing.JTable();
+        GraficaOrdenada = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -45,29 +75,25 @@ public class ReporteVista extends javax.swing.JFrame {
         jLabel1.setText("202300755");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 150, -1));
 
-        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        jLabel2.setText("Velocidad:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 80, -1));
-
         jSeparator1.setBackground(new java.awt.Color(255, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(255, 102, 51));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 380, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, 370, 20));
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        jLabel3.setText("Juan Manuel De León");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 150, -1));
+        jLabel3.setText("Datos Desordenados");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 140, -1));
 
         txtAlgoritmo.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         txtAlgoritmo.setText("null");
         jPanel1.add(txtAlgoritmo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 80, -1));
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        jLabel4.setText("Algoritmo:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 80, -1));
+        jLabel4.setText("Pasos:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 50, -1));
 
-        txtOrden.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        txtOrden.setText("null");
-        jPanel1.add(txtOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 80, -1));
+        txtPasos.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        txtPasos.setText("null");
+        jPanel1.add(txtPasos, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 80, -1));
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
         jLabel5.setText("Velocidad:");
@@ -77,19 +103,200 @@ public class ReporteVista extends javax.swing.JFrame {
         txtVelocidad.setText("null");
         jPanel1.add(txtVelocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 80, -1));
 
+        javax.swing.GroupLayout GraficaDesordenadaLayout = new javax.swing.GroupLayout(GraficaDesordenada);
+        GraficaDesordenada.setLayout(GraficaDesordenadaLayout);
+        GraficaDesordenadaLayout.setHorizontalGroup(
+            GraficaDesordenadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 340, Short.MAX_VALUE)
+        );
+        GraficaDesordenadaLayout.setVerticalGroup(
+            GraficaDesordenadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 210, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(GraficaDesordenada, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 340, 210));
+
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jLabel6.setText("Algoritmo:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 80, -1));
+
+        txt.setFont(new java.awt.Font("Yu Gothic UI", 0, 12)); // NOI18N
+        txt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txt.setText(":");
+        jPanel1.add(txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 10, 20));
+
+        txtMinutos2.setFont(new java.awt.Font("Yu Gothic UI", 0, 12)); // NOI18N
+        txtMinutos2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtMinutos2.setText("00");
+        jPanel1.add(txtMinutos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 30, 20));
+
+        txt1.setFont(new java.awt.Font("Yu Gothic UI", 0, 12)); // NOI18N
+        txt1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txt1.setText(":");
+        jPanel1.add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 10, 20));
+
+        txtMilisegundos1.setFont(new java.awt.Font("Yu Gothic UI", 0, 12)); // NOI18N
+        txtMilisegundos1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtMilisegundos1.setText("00");
+        jPanel1.add(txtMilisegundos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 30, 20));
+
+        txtSegundos1.setFont(new java.awt.Font("Yu Gothic UI", 0, 12)); // NOI18N
+        txtSegundos1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtSegundos1.setText("00");
+        jPanel1.add(txtSegundos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 30, 20));
+
+        jLabel7.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jLabel7.setText("Tiempo:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 80, -1));
+
+        txtOrden1.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        txtOrden1.setText("null");
+        jPanel1.add(txtOrden1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 80, -1));
+
+        jSeparator3.setBackground(new java.awt.Color(255, 0, 0));
+        jSeparator3.setForeground(new java.awt.Color(255, 102, 51));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 370, 10));
+
+        jSeparator4.setBackground(new java.awt.Color(255, 0, 0));
+        jSeparator4.setForeground(new java.awt.Color(255, 102, 51));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 370, 20));
+
+        jLabel8.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jLabel8.setText("Orden:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 50, -1));
+
+        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setText("Dato mayor");
+        jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 140, 30));
+
+        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField2.setText("Dato menor");
+        jTextField2.setBorder(null);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 140, 30));
+
+        jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 30, 20));
+
+        jSeparator6.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 30, 20));
+
+        txtDatoMenor.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        txtDatoMenor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtDatoMenor.setText("null");
+        jPanel1.add(txtDatoMenor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 70, -1));
+
+        txtDatoMayor.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        txtDatoMayor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtDatoMayor.setText("null");
+        jPanel1.add(txtDatoMayor, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 70, -1));
+
+        txtCategoriaMenor.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        txtCategoriaMenor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtCategoriaMenor.setText("null");
+        jPanel1.add(txtCategoriaMenor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 70, -1));
+
+        txtCategoriaMayor.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        txtCategoriaMayor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtCategoriaMayor.setText("null");
+        jPanel1.add(txtCategoriaMayor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 70, -1));
+
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jLabel9.setText("Juan Manuel De León");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 150, -1));
+
+        tablaDesordenada.setFont(new java.awt.Font("Yu Gothic UI", 0, 12)); // NOI18N
+        tablaDesordenada.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null}
+            },
+            new String [] {
+                "Title 1"
+            }
+        ));
+        tablaDesordenada.setGridColor(new java.awt.Color(0, 0, 0));
+        tablaDatosDesordenados.setViewportView(tablaDesordenada);
+
+        jPanel1.add(tablaDatosDesordenados, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 367, 60));
+
+        jSeparator7.setBackground(new java.awt.Color(255, 0, 0));
+        jSeparator7.setForeground(new java.awt.Color(255, 102, 51));
+        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 370, 20));
+
+        jLabel10.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jLabel10.setText("Datos Ordenados");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 590, 120, -1));
+
+        TablaDatosOrdenados.setFont(new java.awt.Font("Yu Gothic UI", 0, 12)); // NOI18N
+        TablaDatosOrdenados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null}
+            },
+            new String [] {
+                "Title 1"
+            }
+        ));
+        TablaDatosOrdenados.setGridColor(new java.awt.Color(0, 0, 0));
+        tablaDatosOrdenados.setViewportView(TablaDatosOrdenados);
+
+        jPanel1.add(tablaDatosOrdenados, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 630, 367, 60));
+
+        javax.swing.GroupLayout GraficaOrdenadaLayout = new javax.swing.GroupLayout(GraficaOrdenada);
+        GraficaOrdenada.setLayout(GraficaOrdenadaLayout);
+        GraficaOrdenadaLayout.setHorizontalGroup(
+            GraficaOrdenadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 340, Short.MAX_VALUE)
+        );
+        GraficaOrdenadaLayout.setVerticalGroup(
+            GraficaOrdenadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 210, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(GraficaOrdenada, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 710, 340, 210));
+
+        jScrollPane1.setViewportView(jPanel1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,15 +334,44 @@ public class ReporteVista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JPanel GraficaDesordenada;
+    public javax.swing.JPanel GraficaOrdenada;
+    public javax.swing.JTable TablaDatosOrdenados;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    public javax.swing.JScrollPane tablaDatosDesordenados;
+    public javax.swing.JScrollPane tablaDatosOrdenados;
+    public javax.swing.JTable tablaDesordenada;
+    private javax.swing.JLabel txt;
+    private javax.swing.JLabel txt1;
     public javax.swing.JLabel txtAlgoritmo;
-    public javax.swing.JLabel txtOrden;
+    public javax.swing.JLabel txtCategoriaMayor;
+    public javax.swing.JLabel txtCategoriaMenor;
+    public javax.swing.JLabel txtDatoMayor;
+    public javax.swing.JLabel txtDatoMenor;
+    public javax.swing.JLabel txtMilisegundos1;
+    public javax.swing.JLabel txtMinutos2;
+    public javax.swing.JLabel txtOrden1;
+    public javax.swing.JLabel txtPasos;
+    public javax.swing.JLabel txtSegundos1;
     public javax.swing.JLabel txtVelocidad;
     // End of variables declaration//GEN-END:variables
 }

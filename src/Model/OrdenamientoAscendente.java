@@ -1,13 +1,16 @@
 
 package Model;
 
+import Control.ControladorReportes;
 import static Model.Datos.ContadorDatos;
 import static Model.Datos.encabezado;
+import static Model.Datos.libreria;
 import static Model.Datos.libreria_ordenada;
 import View.GraficaOrdenadaVista;
 import View.GraficaVista;
 
 import View.OpcionVista;
+import View.ReporteVista;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
@@ -35,22 +38,23 @@ public class OrdenamientoAscendente  implements Runnable{
     //verificando que hilos se ejecutaran 
     @Override
     public void run() {
+        GraficaOrdenadaVista view2 = new GraficaOrdenadaVista();
+        
         //metodo de ordenamiento bubble sort
         if (tipoOrdenamiento.equals("Bubble Sort")) {
-            Bubble_Sort(libreria_ordenada,velocidad);
+            Bubble_Sort(libreria_ordenada,velocidad,view2);
         
         //metodo de ordenamiento Insert Sort
         }else if(tipoOrdenamiento.equals("Insert Sort")){
-            Insert_Sort(libreria_ordenada,velocidad);
+            Insert_Sort(libreria_ordenada,velocidad,view2);
             
         //metodo de ordenamiento Select Sort
         }else if(tipoOrdenamiento.equals("Select Sort")){
-            Select_Sort(libreria_ordenada,velocidad);
+            Select_Sort(libreria_ordenada,velocidad,view2);
         
         //metodo de ordenamiento Merge Sort
         }else if(tipoOrdenamiento.equals("Merge Sort")){
             //iniciamos la vista donde se mostrara la grafica ordenada
-            GraficaOrdenadaVista view2 = new GraficaOrdenadaVista();
             HiloDatosControl hilo2 =new HiloDatosControl(view,view2,"Merge Sort");
             
             //creando los hilos para ordenar y graficar
@@ -62,7 +66,6 @@ public class OrdenamientoAscendente  implements Runnable{
         //metodo de ordenamiento Quicksort
         }else if(tipoOrdenamiento.equals("Quicksort")){
             //iniciamos la vista donde se mostrara la grafica ordenada
-            GraficaOrdenadaVista view2 = new GraficaOrdenadaVista();
             HiloDatosControl hilo2 =new HiloDatosControl(view,view2,"Quicksort");
             
             //creando los hilos para ordenar y graficar
@@ -73,24 +76,28 @@ public class OrdenamientoAscendente  implements Runnable{
         
         //metodo de ordenamiento Shellsort
         }else if (tipoOrdenamiento.equals("Shellsort")){
-            shellSort(libreria_ordenada,velocidad);
+            shellSort(libreria_ordenada,velocidad,view2);
         }
+        
+        //llamando a la vista reporte
+        view.dispose();
+        ReporteVista view3 = new ReporteVista();
+        ControladorReportes control;
+        control = new ControladorReportes(view3);
+        
+        control.IniciarReporte();
+        control.RegistrarDatos(libreria, libreria_ordenada, view2);
+        
+        
     }
     
-    
-    
-    
-    
-    
     //Bubble sort
-    public void Bubble_Sort(Datos[] lista_a_Ordenar, long velocidad){
+    public void Bubble_Sort(Datos[] lista_a_Ordenar, long velocidad,GraficaOrdenadaVista view2){
         int n = lista_a_Ordenar.length;
         boolean intercambiado;
         int contador =0;
         
         //iniciamos la vista donde se mostrara la grafica ordenada
-        GraficaOrdenadaVista view2 = new GraficaOrdenadaVista();
-       
         HiloDatosControl hilo2 =new HiloDatosControl(view,view2,"Bubble Sort");
         //iniciando el hilo que controlara los detalles de la grafica
         try{
@@ -209,12 +216,11 @@ public class OrdenamientoAscendente  implements Runnable{
     }
     
     //Insert_Sort
-    public void Insert_Sort(Datos[] lista_a_Ordenar, long velocidad){
+    public void Insert_Sort(Datos[] lista_a_Ordenar, long velocidad,GraficaOrdenadaVista view2){
         int n = lista_a_Ordenar.length;
         int contador =0;
         
         //iniciamos la vista donde se mostrara la grafica ordenada
-        GraficaOrdenadaVista view2 = new GraficaOrdenadaVista();
         HiloDatosControl hilo2 =new HiloDatosControl(view,view2,"Insert Sort");
         
         //iniciando el hilo que controlara los detalles de la grafica
@@ -323,12 +329,11 @@ public class OrdenamientoAscendente  implements Runnable{
     }
      
     //Select Sort
-    public void Select_Sort(Datos[] lista_a_Ordenar, long velocidad){
+    public void Select_Sort(Datos[] lista_a_Ordenar, long velocidad,GraficaOrdenadaVista view2){
         int n = lista_a_Ordenar.length;
         int contador =0;
         
         //iniciamos la vista donde se mostrara la grafica ordenada
-        GraficaOrdenadaVista view2 = new GraficaOrdenadaVista();
         HiloDatosControl hilo2 =new HiloDatosControl(view,view2,"Select Sort");
         
         //iniciando el hilo que controlara los detalles de la grafica
@@ -926,12 +931,11 @@ public class OrdenamientoAscendente  implements Runnable{
     }
     
     //shellsort
-    public void shellSort(Datos[] lista_a_Ordenar, long velocidad){
+    public void shellSort(Datos[] lista_a_Ordenar, long velocidad,GraficaOrdenadaVista view2){
         int n = lista_a_Ordenar.length;
         int contador =0;
         
         //iniciamos la vista donde se mostrara la grafica ordenada
-        GraficaOrdenadaVista view2 = new GraficaOrdenadaVista();
         HiloDatosControl hilo2 =new HiloDatosControl(view,view2,"Shellsort");
         
         //iniciando el hilo que controlara los detalles de la grafica
