@@ -3,8 +3,10 @@ package Control;
 
 import Model.Datos;
 import static Model.Datos.encabezado;
+
 import View.GraficaOrdenadaVista;
 import View.ReporteVista;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.table.DefaultTableModel;

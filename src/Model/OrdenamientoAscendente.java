@@ -2,13 +2,14 @@
 package Model;
 
 import Control.ControladorReportes;
+
 import static Model.Datos.ContadorDatos;
 import static Model.Datos.encabezado;
 import static Model.Datos.libreria;
 import static Model.Datos.libreria_ordenada;
+
 import View.GraficaOrdenadaVista;
 import View.GraficaVista;
-
 import View.OpcionVista;
 import View.ReporteVista;
 import java.awt.BorderLayout;
@@ -61,7 +62,7 @@ public class OrdenamientoAscendente  implements Runnable{
             hilo2.start();
             contador_recursivo=0;
             Merge_Sort(libreria_ordenada,velocidad,0,libreria_ordenada.length-1,view2,hilo2);
-            hilo2.interrupt();
+            hilo2.detener();
         
         //metodo de ordenamiento Quicksort
         }else if(tipoOrdenamiento.equals("Quicksort")){
@@ -72,7 +73,7 @@ public class OrdenamientoAscendente  implements Runnable{
             hilo2.start();
             contador_recursivo=0;
             QuickSort(libreria_ordenada,velocidad,0,libreria_ordenada.length-1,view2,hilo2);
-            hilo2.interrupt();
+            hilo2.detener();
         
         //metodo de ordenamiento Shellsort
         }else if (tipoOrdenamiento.equals("Shellsort")){

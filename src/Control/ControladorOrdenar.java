@@ -5,14 +5,12 @@ import Model.Datos;
 import static Model.Datos.ContadorDatos;
 import static Model.Datos.libreria;
 import static Model.Datos.libreria_ordenada;
-import Model.HiloDatosControl;
-import Model.Impresor;
 import Model.OrdenamientoAscendente;
 import Model.OrdenamientoDescendente;
-import View.GraficaOrdenadaVista;
+
 import View.GraficaVista;
 import View.OpcionVista;
-import View.ReporteVista;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

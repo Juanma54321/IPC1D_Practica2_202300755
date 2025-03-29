@@ -47,21 +47,18 @@ public class HiloDatosControl extends Thread{
         
         //contador de milisegundos
         try{
+            long startTime = System.nanoTime(); // Guardar el tiempo de inicio
             while(running){
-            sleep(1);
+            long elapsedTime = (System.nanoTime() - startTime) / 1_000_000; // Convertir a milisegundos
+            milisegundo = (int) (elapsedTime % 1000);
+            segundero = (int) ((elapsedTime / 1000) % 60);
+            minutero = (int) ((elapsedTime / 60000));
             view2.txtMilisegundos1.setText(String.valueOf(milisegundo));
             view2.txtSegundos1.setText(String.valueOf(segundero));
             view2.txtMinutos2.setText(String.valueOf(minutero));
             milisegundo++;
-            if (milisegundo==1000) {
-                segundero++;
-                milisegundo=0;
-            }else if(segundero==60){
-                minutero++;
-                segundero=0;
             }
-            }
-            
+            sleep(1);
         }catch(InterruptedException e){
         
         }

@@ -5,12 +5,12 @@ import static Model.Datos.ContadorDatos;
 import static Model.Datos.encabezado;
 import static Model.Datos.libreria;
 import static Model.Datos.libreria_ordenada;
-import static Model.OrdenamientoAscendente.contador_recursivo;
+
 import View.GraficaOrdenadaVista;
 import View.GraficaVista;
-
 import View.OpcionVista;
 import View.ReporteVista;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
@@ -78,11 +78,14 @@ public class OrdenamientoDescendente implements Runnable {
         //llamando a la vista reporte
         view.dispose();
         ReporteVista view3 = new ReporteVista();
+        //iniciando el hilo que guardara el reporte
+        Impresor hilo3= new Impresor(view3);
         ControladorReportes control;
         control = new ControladorReportes(view3);
         
         control.IniciarReporte();
         control.RegistrarDatos(libreria, libreria_ordenada, view2);
+        hilo3.start();
         
     }
     
